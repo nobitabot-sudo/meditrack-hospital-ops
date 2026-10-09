@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTrack | Sanjeevani Command Center</title>
+    <!-- Tailwind CSS for zero-setup premium styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+    
+    <!-- Top Header -->
+    <header class="bg-slate-900 text-white p-4 shadow-md flex justify-between items-center">
+        <div class="text-xl font-bold tracking-wider flex items-center gap-2">
+            <span class="text-2xl">🏥</span> MediTrack <span class="text-blue-400">Agent</span>
+        </div>
+        <div class="text-sm font-medium text-slate-300">Sanjeevani Multispeciality Hospital</div>
+    </header>
 
+    <!-- Main Dashboard Grid -->
+    <main class="p-4 lg:p-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- LEFT & CENTER: Observations & AI Investigations -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Real-time Signals (KPIs) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="kpi-container">
+                <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-red-500">
+                    <h3 class="text-xs text-gray-500 uppercase font-bold tracking-wider">Emergency Wait</h3>
+                    <p class="text-2xl font-bold mt-1 text-slate-800" id="wait-time">--</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-500">
+                    <h3 class="text-xs text-gray-500 uppercase font-bold tracking-wider">Blocked Beds</h3>
+                    <p class="text-2xl font-bold mt-1 text-slate-800" id="blocked-beds">--</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-500">
+                    <h3 class="text-xs text-gray-500 uppercase font-bold tracking-wider">Pending Labs</h3>
+                    <p class="text-2xl font-bold mt-1 text-slate-800" id="pending-labs">--</p>
+                </div>
+            </div>
+
+            <!-- Agent Investigation Area (Where AI connects the dots) -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-800">
+                    <span>🔍</span> Agent Investigations
+                </h2>
+                <div id="investigations-container" class="space-y-4">
+                    <p class="text-sm text-gray-500 animate-pulse">MediTrack Agent is reading hospital signals...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Actions & Human Approvals -->
+        <div class="space-y-6">
+            
+            <!-- Recommended Actions Planner -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-blue-600">
+                <h2 class="text-lg font-bold mb-4 text-slate-800">⚡ Action Planner</h2>
+                <div id="recommendations-container" class="space-y-4">
+                    <p class="text-sm text-gray-500">Waiting for agent analysis...</p>
+                </div>
+            </div>
+
+            <!-- Audit Log (Crucial for the "Human Approval" rule) -->
+            <div class="bg-slate-100 p-5 rounded-xl border border-slate-200">
+                <h2 class="text-sm font-bold mb-3 text-slate-600 uppercase tracking-wider">📋 Audit Log</h2>
+                <ul id="audit-log" class="text-xs space-y-2 text-slate-600 font-mono">
+                    <li>> System initialized. Awaiting signals.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS Files (ORDER IS CRITICAL) -->
+    <script src="js/data.js"></script>
+    <script src="js/agent.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
